@@ -6,6 +6,8 @@ This project is very much a work in progress and will probably change as time go
 
 ## Install
 
+Create a custom dimension in Google Analytics. Currently the script is hardcoded to dimension 1.
+
 Publish `js/ab-test.js` to your webserver. Import `xsl/snippet-abtest.xsl` into an existing stylesheet and change link to `ab-test.js` to go to your published version of the file. Add `snippet-abtest.html` to your sinppets directory (probably /_resources/ou/snippets) and register the snippet with OU Campus.
 
 ## Contribute
