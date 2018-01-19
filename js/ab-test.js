@@ -1,16 +1,13 @@
-$.fn.ABTest = function(total){
+$.fn.ABTest = function(total, show){
 	
-	show = Math.floor((Math.random() * total) + 1);
+	console.log("A/B Test hit", total, show);
+	
 	for (i = 1; i <= total; i++) { 
 		 if (i != show){
 			$(".abtestV" + i).remove();	
 		}else{
 			$(".abtestV" + i).removeClass("hide");	
 		}
-	}
-
-	if(typeof ga !== "undefined"){
-		ga('set', 'dimension1', 'variation ' + show);
 	}
 	
 }
