@@ -23,7 +23,7 @@ Last Updated: 1/19/18
         </xsl:for-each>
     	
         <script src="../js/abtest.js"></script>
-        <script>$(this).ABTest(abtestTotal, abtestRandom);</script>
+        <script>$(this).ABTest(abtestTotal, abtest);</script>
 		
     </xsl:template>
 	
