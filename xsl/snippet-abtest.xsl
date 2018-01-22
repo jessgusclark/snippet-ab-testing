@@ -4,7 +4,7 @@
 Implementations Skeletor v3 - 5/10/2014
 
 Contributors: Jesse Clark <jesse.clark@unco.edu>
-Last Updated: 1/19/17
+Last Updated: 1/19/18
 -->
 <xsl:stylesheet version="3.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -22,7 +22,7 @@ Last Updated: 1/19/17
             </div>
         </xsl:for-each>
     	
-        <script src="http://www.unco.edu/_resources/js/abtest.js"></script>
+        <script src="../js/abtest.js"></script>
         <script>$(this).ABTest(abtestTotal, abtestRandom);</script>
 		
     </xsl:template>
