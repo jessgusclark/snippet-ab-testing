@@ -36,7 +36,7 @@ Last Updated: 1/19/18
                 </xsl:for-each>
                 
                 <script src="http://www.unco.edu/_resources/js/abtest.js"></script>
-                <script>$(this).ABTest(<xsl:value-of select="count(tbody/tr)" />);</script>
+                <script>$(this).ABTest(<xsl:value-of select="count(tbody/tr)" />, abtest);</script>
 		
 			</xsl:otherwise>
 		</xsl:choose>
