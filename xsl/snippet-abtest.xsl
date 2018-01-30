@@ -16,15 +16,30 @@ Last Updated: 1/19/18
     
     <!-- Asset for A/B Testing -->
 	<xsl:template match="table[@class='ou-abtest']">
-    	<xsl:for-each select="tbody/tr">
-        	<div class="abtestV{position()} hide">
-            	<xsl:apply-templates select="td[1]" />
-            </div>
-        </xsl:for-each>
-    	
-        <script src="../js/abtest.js"></script>
-        <script>$(this).ABTest(abtestTotal, abtest);</script>
+    	<xsl:choose>
+        	<xsl:when test="$ou:action != 'pub'">
+            	
+            	<xsl:for-each select="tbody/tr">
+                    <div class="panel" style="position:relative;">
+                    	<div class="label" style="position:absolute; top:0; left:0;">Variation <xsl:value-of select="position()" /></div>
+                        <xsl:apply-templates select="td[1]" />
+                    </div>
+                </xsl:for-each>
+			</xsl:when>
+            
+			<xsl:otherwise>
+				     
+                <xsl:for-each select="tbody/tr">
+                    <div class="abtestV{position()} hide">
+                        <xsl:apply-templates select="td[1]" />
+                    </div>
+                </xsl:for-each>
+                
+                <script src="http://www.unco.edu/_resources/js/abtest.js"></script>
+                <script>$(this).ABTest(<xsl:value-of select="count(tbody/tr)" />);</script>
 		
+			</xsl:otherwise>
+		</xsl:choose>
     </xsl:template>
 	
 </xsl:stylesheet>
